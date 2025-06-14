@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load markdown_extras %} {% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <article class="post-detail">
+        {% if post.header_image_url %}
+            <img src="{{ post.header_image_url }}" alt="{{ post.title }}">
+        {% endif %}
+
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">by {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}</p>
+        <hr>
+        <div class="post-content">
+            {{ post.content|markdownify|safe }}
+        </div>
+    </article>
+{% endblock %}

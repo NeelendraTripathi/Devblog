@@ -1,0 +1,29 @@
+<!-- blog/templates/blog/contact.html -->
+{% extends 'blog/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+    <h1>Contact Us</h1>
+    <p>Have a question or want to work together? Drop a message below!</p>
+
+    <form method="post" class="contact-form" novalidate>
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div class="form-errors">
+                        {% for error in field.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+{% endblock %}

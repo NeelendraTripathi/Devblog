@@ -1,0 +1,21 @@
+# .gitignore file
+# Environments
+.env
+myenv/
+
+# Database
+db.sqlite3
+/db.sqlite3-journal
+
+# Django
+*.log
+*.pot
+*.pyc
+_pycache_/
+media/
+static/
+.DS_Store
+
+# My OS
+.AppleDouble
+.LSOverride
