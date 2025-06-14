@@ -10,6 +10,3 @@
     
     # Run our database "construction" plan
     python manage.py migrate
-
-
-    python manage.py create_super_user
