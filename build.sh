@@ -9,4 +9,4 @@
     python manage.py collectstatic --no-input
     
     # Run our database "construction" plan
-    python manage.pymigrate
+    python manage.py migrate
